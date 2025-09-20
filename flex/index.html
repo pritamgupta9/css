@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex-container {
+            width: 800px;
+            height: 600px;
+            margin: auto;
+            background-image: linear-gradient(to right, #ffcccc, #ccffcc);
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            /* gap: 10px; */
+            /* flex-direction: column; */
+        }
+        .flex-item{
+            width: 100px;
+            height: 100px;
+            /* flex:1; */
+            background-image: linear-gradient(to right, #6666ff, #cc66ff);
+            border: 1px solid black;
+        }
+        .item1{
+            /* flex-grow: 1; */
+            /* flex-shrink: 5; */
+            align-self: flex-start;
+        }
+          .item2{
+            /* flex-grow: 1; */
+            /* flex-shrink: 5; */
+            align-self: flex-end;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item item1"></div>
+        <div class="flex-item item2"><
+            /div>
+        <div class="flex-item"></div>
+        <div class="flex-item"></div>
+        <div class="flex-item"></div>
+    </div>
+</body>
+</html>
