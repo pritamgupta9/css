@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,7 +24,7 @@
             <nav class="navbar">
                 <ul>
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="index.html" class="nav-link" data-aos="fade-right">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="about.html" class="nav-link">About</a>
@@ -63,7 +64,7 @@
                         <a href="service.html" class="btn btn-white">Learn with us</a>
                     </div>
                 </div>
-                <div class="section-hero--image">
+                <div class="section-hero--image" data-aos="fade-up">
                     <figure>
                         <img src="./images/main-hero1.webp" alt="hero image" width="100%" height="auto" srcset="">
                     </figure>
@@ -98,7 +99,7 @@
 
         <div class="container grid grid-three--cols">
             <div class="about-div">
-                <div class="icon">
+                <div class="icon" data-aos="fade-up">
                     <img src="./images/research.png" alt="resadd" srcset="">
                 </div>
                 <h3 class="section-commom--title">Research</h3>
@@ -109,7 +110,7 @@
                 </p>
             </div>
             <div class="about-div">
-                <div class="icon">
+                <div class="icon" data-aos="fade-up">
                     <img src="./images/design.png" alt="resadd" srcset="">
                 </div>
                 <h3 class="section-commom--title">Desgin</h3>
@@ -120,7 +121,7 @@
                 </p>
             </div>
             <div class="about-div">
-                <div class="icon">
+                <div class="icon" data-aos="fade-up">
                     <img src="./images/Coding.png" alt="resadd" srcset="">
                 </div>
                 <h3 class="section-common--title">Development</h3>
@@ -381,6 +382,10 @@
         </div>
     </footer>
     <!-- end footer section  -->
+         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
 </body>
 

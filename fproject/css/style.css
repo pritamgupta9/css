@@ -8,6 +8,8 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
+    /* scroll-snap-type: Y proximity; */
 }
 
 h1,
@@ -62,6 +64,15 @@ li {
     margin: 0 auto;
     padding: 9.6rem 2.4rem;
     /* border: 2px solid red; */
+}
+
+:is(.section-about,
+    .section-blog,
+    .section-contact,
+    .section-course,
+    .section-why--choose,
+    .section-contact--homepage) .container:first-child {
+    padding: 6.4rem 2.4rem 2.4rem 2.4rem;
 }
 
 .grid {
@@ -153,7 +164,7 @@ li {
     color: var(--hero-heading-color);
 }
 
-.btn{
+.btn {
     display: inline-block;
     padding: 1.2rem 3.2rem;
     background-color: var(--main-color);
@@ -388,19 +399,20 @@ figure {
         width: 90%;
         height: auto;
     }
-    
-    & a{
+
+    & a {
         color: var(--white-color);
         text-transform: capitalize;
     }
-    & .fa-solid{
+
+    & .fa-solid {
         padding: 0;
         color: var(--white-color);
         background-color: var(--main-color);
     }
 }
 
-.contact-title{
+.contact-title {
     font-size: 3.8rem;
     line-height: 1.2;
 }
@@ -409,7 +421,7 @@ figure {
 
 /* footer section  */
 
-footer{
+footer {
     background-color: var(--footer-bg-color);
     padding: 15rem;
 
@@ -426,17 +438,21 @@ footer{
         text-transform: uppercase;
         font-weight: 700;
     }
-    & .footer-1--div p{
-        margin: 1rem 0 3.2rem 0;;
+
+    & .footer-1--div p {
+        margin: 1rem 0 3.2rem 0;
+        ;
     }
-    & .footer-1--div{
+
+    & .footer-1--div {
         text-align: left;
 
-        & .social-footer--icons{
+        & .social-footer--icons {
             display: flex;
             gap: 2.4rem;
         }
-        & .fa-brands{
+
+        & .fa-brands {
             width: 5rem;
             aspect-ratio: 1;
             background-color: var(--supporting-color);
@@ -447,7 +463,8 @@ footer{
             align-items: center;
             transition: all 0.3s linear;
         }
-        & .fa-brands:hover{
+
+        & .fa-brands:hover {
             background-color: var(--bnt-hover-bg-color);
             color: var(--supporting-color);
             rotate: 360deg;
@@ -457,3 +474,190 @@ footer{
 
 }
 
+
+
+
+/* media query section  */
+@media (width<=1400px) {
+    html {
+        font-size: 56.25%;
+    }
+
+    .section-hero img {
+        width: 90%;
+    }
+}
+
+@media (width <=1220px) {
+    html {
+        font-size: 54%;
+    }
+
+    :is(.section-about,
+        .section-blog,
+        .section-contact,
+        .section-course,
+        .section-why--choose,
+        .section-contact--homepage) .container:first-child {
+        gap: 6.4rem;
+    }
+}
+
+@media(width<=1100px) {
+    :is(.section-course, .section-blog) .grid-four--cols {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .section-why--choose {
+        & .choose-left--div {
+            order: 2
+        }
+
+        & .choose-right--div {
+            order: 3;
+        }
+
+        & .choose-center--div {
+            order: 1;
+
+            & figure::before {
+                width: 0;
+                height: 0;
+                background-color: transparent;
+                padding: 0;
+            }
+
+            & figure::after {
+                width: 0;
+                height: 0;
+                background-color: transparent;
+                padding: 0;
+            }
+        }
+
+
+    }
+
+}
+
+@media (width<=998px) {
+    .section-hero {
+        height: auto;
+        padding-bottom: 5rem;
+
+        & .grid-two--cols {
+            grid-template-columns: 1fr;
+
+            & .section-hero--content {
+                order: 2;
+            }
+
+
+            & .section-hero--image {
+                order: 1;
+
+                & img {
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+    .section-about .about-div {
+        text-align: left;
+    }
+
+    footer .grid-four--cols {
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+        text-align: left;
+
+        & .footer-1--div {
+            grid-row: 2/3;
+            grid-column: 1/-1;
+            margin: 6.4rem;
+        }
+
+
+    }
+
+}
+
+@media (width<=768px) {
+
+    .grid-two--cols,
+    .grid-three--cols {
+        grid-template-columns: 1fr;
+    }
+
+    .section-navbar .container {
+        display: flex;
+        flex-direction: column;
+
+
+        & .navbar ul {
+            gap: 2.4rem
+        }
+        & .navbar-brand {
+            text-align: center;
+            margin-bottom: 2.4rem;
+        }
+    }
+
+      .section-hero .grid .hero-heading {
+    font-size: 3.8rem;
+  }
+  .section-why--choose {
+    & img {
+      width: 30%;
+    }
+
+    & .grid {
+      gap: 1.4rem;
+    }
+
+    & .text-align--right, .why-choose--div {
+      align-items: start !important;
+      text-align: left;
+    }
+  }
+
+  .section-contact--homepage .btn {
+    display: block;
+    text-align: center;
+  }
+
+  .contact-title {
+    font-size: 2.4rem;
+  }
+  :is(.section-contact--homepage) .container:first-child {
+    padding: 6.4rem 0rem 2.4rem 0rem;
+  }
+
+
+}
+
+
+/***** scrollbar Section *****/
+
+/* width */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--supporting-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--heading-color);
+}
+
+/***** End scrollbar Section *****/
